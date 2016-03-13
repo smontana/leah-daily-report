@@ -1,0 +1,42 @@
+.primary-attrs {
+  padding: 1.618em 0;
+}
+
+.level-1-attr {
+  font-size: 1.382em;
+  font-weight: normal;
+  display: inline-block;
+  opacity: 0.682;
+  /*float: left;*/
+  width: 33%;
+  text-align: center;
+  border-right: 1px solid #eaeaea;
+}
+
+.level-1-attr:last-of-type {
+  border: 0;
+}
+
+.level-1-attr .comment {
+  /*display: none;*/
+}
+
+.level-1-attr span {
+  margin-right: 1.382em;
+}
+
+.level-1-attr i {
+  margin-right: 0.382em;
+}
+
+.level-1-attr i.failed {
+  color: red;
+}
+
+.level-1-attr i.converted {
+  color: green;
+}
+
+.level-1-attr i.calibrated {
+  color: blue;
+}

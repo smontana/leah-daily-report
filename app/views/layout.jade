@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= 'Leah | Work'
+    script(src='/javascripts/picker.js')
+    script(src='/javascripts/picker.date.js')
+    script(src='/javascripts/d3.min.js' charset='utf-8')
+    script(src='/javascripts/c3.min.js' charset='utf-8')
+
+    link(rel='stylesheet', href='/fonts/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/headers.css')
+    link(rel='stylesheet', href='/stylesheets/c3.min.css')
+    //- link(rel='stylesheet', href='/stylesheets/print.css')
+
+    meta(name='viewport' content='width=device-width')
+    meta(name='robots' content='noindex, nofollow')
+
+    link(rel='stylesheet', href='/stylesheets/default.css')
+    link(rel='stylesheet', href='/stylesheets/default.date.css')
+
+  body
+
+    div.navbar(id='navbar')
+      img(src="/images/logo.jpg")
+      
+      a(href='/dashboards') Dashboards
+      a(href='/reports') Reports
+
+    block content
+
+    div.footer
+      div.anchor-right
+
+    //- script(src='/javascripts/frontend.js')

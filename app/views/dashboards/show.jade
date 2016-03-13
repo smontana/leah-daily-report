@@ -1,0 +1,54 @@
+extends ../layout
+
+block content
+  - var uid = report.uid
+  - var traffic_today = report.traffic_count_today
+  - var traffic_week = report.traffic_count_week
+  - var guarantor_received_count = report.guarantor_received_count
+  - var new_lease_count_today = report.new_lease_count_today
+  - var new_lease_count_week = report.new_lease_count_week
+  - var new_lease_count_YTD = report.new_lease_count_YTD
+  - var renewal_count_today = report.renewal_count_today
+  - var renewal_count_week = report.renewal_count_week
+  - var renewal_count_YTD = report.renewal_count_YTD
+  - var leased_floorplan_1x1 = report.leased_floorplan_1x1
+  - var leased_floorplan_2x2a = report.leased_floorplan_2x2a
+  - var leased_floorplan_2x2b = report.leased_floorplan_2x2b
+  - var leased_floorplan_4x2 = report.leased_floorplan_4x2
+  - var NOT_leased_floorplan_1x1 = report.NOT_leased_floorplan_1x1
+  - var NOT_leased_floorplan_2x2a = report.NOT_leased_floorplan_2x2a
+  - var NOT_leased_floorplan_2x2b = report.NOT_leased_floorplan_2x2b
+  - var NOT_leased_floorplan_4x2 = report.NOT_leased_floorplan_4x2
+
+  h1
+    i.material-icons="insert_chart"
+    =title
+
+  ul
+    li= 'Report Date: ' + report_date
+
+    li= 'Last Year\'s Prelease %: ' + prelease_percentage_prv_year + '%'
+
+    li= 'Traffic Today: ' + traffic_today
+
+    li= 'Traffic This Week: ' + traffic_week
+
+    li= 'Guarantor Paperwork Received: ' + guarantor_received_count
+
+    li= 'New Lease Count Today: ' + new_lease_count_today
+    li= 'New Lease Count Week: ' + new_lease_count_week
+    li= 'New Lease Count YTD: ' + new_lease_count_YTD
+
+    li= 'Renewal Count Today: ' + renewal_count_today
+    li= 'Renewal Count Week: ' + renewal_count_week
+    li= 'Renewal Count YTD: ' + renewal_count_YTD
+
+    li= 'Leased Floorplan 1x1: ' + leased_floorplan_1x1
+    li= 'Leased Floorplan 2x2a: ' + leased_floorplan_2x2a
+    li= 'Leased Floorplan 2x2b: ' + leased_floorplan_2x2b
+    li= 'Leased Floorplan 4x2: ' + leased_floorplan_4x2
+
+    li= 'Left-to-Lease Floorplan 1x1: ' + NOT_leased_floorplan_1x1
+    li= 'Left-to-Lease Floorplan 2x2a: ' + NOT_leased_floorplan_2x2a
+    li= 'Left-to-Lease Floorplan 2x2b: ' + NOT_leased_floorplan_2x2b
+    li= 'Left-to-Lease Floorplan 4x2: ' + NOT_leased_floorplan_4x2

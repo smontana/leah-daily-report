@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  h1
+    i.material-icons="assignment"
+    =title
+    span.total-surveys='# ' + total
+    a(href="/dashboards/new").anchor-right + New
+
+  ul
+  each result in results
+    - var uid = result.uid
+    - var report_date_pretty = result.report_date_beautify()
+
+    li.thumb-list
+      a(href="/dashboards/#{uid}")
+        span.gradee-name=report_date_pretty
+
+  if page == 1
+    a.page-next(href="/dashboards/?page=" + (page + 1)) >
+    a.page-last(href="/dashboards/?page=" + total_pages) >>
+
+  else if page == total_pages
+    a.page.page-first(href="/dashboards") <<
+    a.page.page-prev(href="/dashboards/?page=" + (page - 1)) <
+
+  else
+    a.page.page-first(href="/dashboards") <<
+    a.page.page-prev(href="/dashboards/?page=" + (page - 1)) <
+    a.page-next(href="/dashboards/?page=" + (page + 1)) >
+    a.page-last(href="/dashboards/?page=" + total_pages) >>
