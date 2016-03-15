@@ -4,9 +4,7 @@ module.exports = function(connection, models) {
   var router = express.Router();
 
   router.get('/', function(req, res, next){
-    res.render('../views/dashboards/index', {
-     title: 'Leah | Work'
-    });
+    res.redirect('/dashboards');
   });
 
   return(router);
