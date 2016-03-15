@@ -1,31 +1,37 @@
 extends ../layout
 
 block content
-  h1
-    i.material-icons="assignment"
-    =title
-    span.total-surveys='# ' + total
-    a(href="/dashboards/new").anchor-right + New
 
-  ul
-  each result in results
-    - var uid = result.uid
-    - var report_date_pretty = result.report_date_beautify()
+  div.container-fluid
 
-    li.thumb-list
-      a(href="/dashboards/#{uid}")
-        span.gradee-name=report_date_pretty
+    h1.text-left
+      i.icon-center.material-icons="assignment"
+      =title
 
-  if page == 1
-    a.page-next(href="/dashboards/?page=" + (page + 1)) >
-    a.page-last(href="/dashboards/?page=" + total_pages) >>
+      //- a(href="/dashboards/new").anchor-right + New
 
-  else if page == total_pages
-    a.page.page-first(href="/dashboards") <<
-    a.page.page-prev(href="/dashboards/?page=" + (page - 1)) <
+    ul.list-group
+      each result in results
+        - var uid = result.uid
+        - var report_date_pretty = result.report_date_beautify()
 
-  else
-    a.page.page-first(href="/dashboards") <<
-    a.page.page-prev(href="/dashboards/?page=" + (page - 1)) <
-    a.page-next(href="/dashboards/?page=" + (page + 1)) >
-    a.page-last(href="/dashboards/?page=" + total_pages) >>
+        li.list-group-item
+          a(href="/dashboards/#{uid}")
+            span.gradee-name=report_date_pretty
+
+    if page == 1
+      div.btn-group
+        a.btn(href="/dashboards/?page=" + (page + 1)) >
+        a.btn(href="/dashboards/?page=" + total_pages) >>
+
+    else if page == total_pages
+      div.btn-group
+        a.btn(href="/dashboards") <<
+        a.btn(href="/dashboards/?page=" + (page - 1)) <
+
+    else
+      div.btn-group
+        a.btn(href="/dashboards") <<
+        a.btn(href="/dashboards/?page=" + (page - 1)) <
+        a.btn(href="/dashboards/?page=" + (page + 1)) >
+        a.btn(href="/dashboards/?page=" + total_pages) >>

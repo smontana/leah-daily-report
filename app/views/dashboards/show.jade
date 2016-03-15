@@ -20,41 +20,122 @@ block content
   - var NOT_leased_floorplan_2x2b = report.NOT_leased_floorplan_2x2b
   - var NOT_leased_floorplan_4x2 = report.NOT_leased_floorplan_4x2
 
-  h1
-    i.material-icons="insert_chart"
-    =title
+  div.container-fluid
 
-  h2.primary-details
-    div.field-container
-      span.label='Report Date: '
-      span.field-val
-        i.material-icons="today"
-        =report_date
-  ul
-    li= 'Report Date: ' + report_date
+    h1.show-center
+      i.icon-center.material-icons="insert_chart"
+      =title
 
-    li= 'Last Year\'s Prelease %: ' + prelease_percentage_prv_year + '%'
+      h2.show-center
+        div.field-container
+          i.icon-center.material-icons="today"
+          =report_date
 
-    li= 'Traffic Today: ' + traffic_today
+    div.report-panels
+      div.row
+        .col-md-4
+          .traffic-panel
+            +panel-default("Traffic")
+              div.row
+                div.col-lg-6
+                  ='Today'
+                    div.traffic-today
+                      =traffic_today
 
-    li= 'Traffic This Week: ' + traffic_week
+                div.col-lg-6
+                  ='Week'
+                    div.traffic-week
+                      =traffic_week
 
-    li= 'Guarantor Paperwork Received: ' + guarantor_received_count
+        .col-md-4
+          .guarantor-panel
+            +panel-default("Guarantor Paperwork")
+              div.row
+                div.col-lg-6
+                  ='Received'
+                    div.guarantor-count
+                      =guarantor_received_count
 
-    li= 'New Lease Count Today: ' + new_lease_count_today
-    li= 'New Lease Count Week: ' + new_lease_count_week
-    li= 'New Lease Count YTD: ' + new_lease_count_YTD
+                div.col-lg-6
+                  ='Percentage'
+                    div.guarantor-percentage
+                      =guarantor_percentage
 
-    li= 'Renewal Count Today: ' + renewal_count_today
-    li= 'Renewal Count Week: ' + renewal_count_week
-    li= 'Renewal Count YTD: ' + renewal_count_YTD
+        .col-md-4
+          .prelease-panel
+            +panel-default("Prelease Percentages")
+              div.row
+                div.col-lg-6
+                  ='Prelease %'
+                    div.prelease
+                      =prelease_percentage
 
-    li= 'Leased Floorplan 1x1: ' + leased_floorplan_1x1
-    li= 'Leased Floorplan 2x2a: ' + leased_floorplan_2x2a
-    li= 'Leased Floorplan 2x2b: ' + leased_floorplan_2x2b
-    li= 'Leased Floorplan 4x2: ' + leased_floorplan_4x2
+                div.col-lg-6
+                  ='Last Year\'s Prelease %'
+                    div.prv-prelease
+                      =prelease_percentage_prv_year
 
-    li= 'Left-to-Lease Floorplan 1x1: ' + NOT_leased_floorplan_1x1
-    li= 'Left-to-Lease Floorplan 2x2a: ' + NOT_leased_floorplan_2x2a
-    li= 'Left-to-Lease Floorplan 2x2b: ' + NOT_leased_floorplan_2x2b
-    li= 'Left-to-Lease Floorplan 4x2: ' + NOT_leased_floorplan_4x2
+      div.row
+        .col-md-6.col-md-offset-3
+          .lease-count-panel
+            +panel-default("Lease Totals")
+              table.table.table-striped.table-bordered.table-hover.table-condensed
+                tbody
+                  tr
+                    th.text-center='Type'
+                    th.text-center='Today'
+                    th.text-center='Week'
+                    th.text-center='YTD'
+                  tr
+                    td='New Lease'
+                    td=new_lease_count_today
+                    td=new_lease_count_week
+                    td=new_lease_count_YTD
+                  tr
+                    td='Renewal'
+                    td=renewal_count_today
+                    td=renewal_count_week
+                    td=renewal_count_YTD
+                  tr
+                    td='Total'
+                    td=(new_lease_count_today + renewal_count_today)
+                    td=(new_lease_count_week + renewal_count_week)
+                    td=(new_lease_count_YTD + renewal_count_YTD)
+
+      div.row
+        .col-md-6.col-md-offset-3
+          .daily-lease-breakdown-panel
+            +panel-default("Daily Lease Breakdown")
+
+              table.table.table-striped.table-bordered.table-hover.table-condensed
+                tbody
+                  tr
+                    th.text-center='New Lease Percentage'
+                    th.text-center='Renewal Percentage'
+                  tr
+                    td=new_lease_percentage
+                    td=renewal_percentage
+
+              table.table.table-striped.table-bordered.table-hover.table-condensed
+                tbody
+                  tr
+                    th.text-center='Unit Type'
+                    th.text-center='Leased'
+                    th.text-center='Left to Lease'
+                  tr
+                    td='1x1'
+                    td=leased_floorplan_1x1
+                    td=NOT_leased_floorplan_1x1
+                  tr
+                    td='2x2A'
+                    td=leased_floorplan_2x2a
+                    td=NOT_leased_floorplan_2x2a
+                  tr
+                    td='2x2B'
+                    td=leased_floorplan_2x2b
+                    td=NOT_leased_floorplan_2x2b
+                  tr
+                    td='4x2'
+                    td=leased_floorplan_4x2
+                    td=NOT_leased_floorplan_4x2
+

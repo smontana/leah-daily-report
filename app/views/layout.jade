@@ -1,35 +1,81 @@
+
+//- Including Icon mixins
+include components/icons
+//- Including Alert mixins
+include components/alerts
+//- Including Tooltip mixins
+include components/tooltips
+//- Including Accordion mixins
+include components/accordion
+//- Including Carousel mixins
+include components/carousel
+//- Including Table mixins
+include components/tables
+//- Including Navbar mixins
+include components/navbar
+//- Including Toggle Button mixins
+include components/toggle
+//- Including Nav mixins
+include components/navs
+//- Including Label mixins
+include components/labels
+//- Including Panel mixins
+include components/panels
+//- Including Tab mixins
+include components/tabs
+//- Including Dropdown mixins
+include components/dropdowns
+//- Including Form control mixins
+include components/forms
+//- Including Modal dialog mixins
+include components/modal
+//- Including List group mixins
+include components/list-groups
+//- Including Progress bar mixins
+include components/progress-bars
+//- Including Button mixins
+include components/buttons
+//- Including Image mixins
+include components/images
+//- Including Bootswatch theme mixins
+include components/bootswatch
+
 doctype html
-html
+html(lang="en")
   head
-    title= 'Leah | Work'
-    script(src='/javascripts/picker.js')
-    script(src='/javascripts/picker.date.js')
-    script(src='/javascripts/d3.min.js' charset='utf-8')
-    script(src='/javascripts/c3.min.js' charset='utf-8')
-
-    link(rel='stylesheet', href='/fonts/material-icons.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/headers.css')
-    link(rel='stylesheet', href='/stylesheets/c3.min.css')
-    //- link(rel='stylesheet', href='/stylesheets/print.css')
-
-    meta(name='viewport' content='width=device-width')
+    meta(charset="UTF-8")
     meta(name='robots' content='noindex, nofollow')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    //- link(rel="icon",href="../../favicon.ico")
+    title= 'Leah | Work'
 
-    link(rel='stylesheet', href='/stylesheets/default.css')
-    link(rel='stylesheet', href='/stylesheets/default.date.css')
+    block styles
+      link(rel='stylesheet', href='/fonts/material-icons.css')
+      link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='/stylesheets/c3.min.css')
+      link(rel='stylesheet', href='/stylesheets/default.css')
+      link(rel='stylesheet', href='/stylesheets/default.date.css')
+      link(rel='stylesheet', href='/stylesheets/myStyles.css')
+      //- link(rel='stylesheet', href='/stylesheets/print.css')
 
-  body
-
-    div.navbar(id='navbar')
-      img(src="/images/logo.jpg")
-      
-      a(href='/dashboards') Dashboards
-      a(href='/reports') Reports
+  body(data-spy="scroll",data-target=".scrollspy")
+    block body
+      +navbar-fixed("Leah Ashlyn Montana", "navbar", "inverse")
+        +nav_item("/","active") Home
+        +nav_item("/dashboards") Dashboards
+        +nav_item("/reports") Reports
+        //- a(href='/dashboards') Dashboards
+        //- a(href='/reports') Reports
+        //- img(src="/images/logo.jpg")
 
     block content
 
-    div.footer
-      div.anchor-right
-
-    //- script(src='/javascripts/frontend.js')
+    block scripts
+      script(src='/javascripts/jquery.min.js')
+      script(src='/javascripts/bootstrap.min.js')
+      script(src='/javascripts/picker.js')
+      script(src='/javascripts/picker.date.js')
+      script(src='/javascripts/d3.min.js')
+      script(src='/javascripts/c3.min.js')
+      //- script(src='/javascripts/frontend.js')

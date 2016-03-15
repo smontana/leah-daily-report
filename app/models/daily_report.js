@@ -25,7 +25,7 @@ module.exports = function(sequelize) {
       },
 
       prelease_percentage_prv_year: {
-        type: Sequelize.DECIMAL(10,2)
+        type: Sequelize.DECIMAL(10,10)
       },
 
       traffic_count_today: {
@@ -127,10 +127,10 @@ module.exports = function(sequelize) {
             var fp_three_leased = this.getDataValue('leased_floorplan_2x2b');
             var fp_four_leased = this.getDataValue('leased_floorplan_4x2');
 
-            var fp_one_not_leased = this.getDataValue('leased_floorplan_1x1');
-            var fp_two_not_leased = this.getDataValue('leased_floorplan_2x2a');
-            var fp_three_not_leased = this.getDataValue('leased_floorplan_2x2b');
-            var fp_four_not_leased = this.getDataValue('leased_floorplan_4x2');
+            var fp_one_not_leased = this.getDataValue('NOT_leased_floorplan_1x1');
+            var fp_two_not_leased = this.getDataValue('NOT_leased_floorplan_2x2a');
+            var fp_three_not_leased = this.getDataValue('NOT_leased_floorplan_2x2b');
+            var fp_four_not_leased = this.getDataValue('NOT_leased_floorplan_4x2');
 
             var total = (
               fp_one_leased + 
@@ -143,7 +143,7 @@ module.exports = function(sequelize) {
               fp_four_not_leased
             );
 
-            return total
+            return total;
           },
           guarantor_percentage: function () {
             var guarantor_received_count = this.getDataValue('guarantor_received_count');
@@ -154,7 +154,7 @@ module.exports = function(sequelize) {
 
             var guarantor_percentage = (guarantor_received_count / total_lease_count);
 
-            return guarantor_percentage
+            return guarantor_percentage;
           },
           total_lease_count: function () {
             var new_lease_count_YTD = this.getDataValue('new_lease_count_YTD');
@@ -162,7 +162,7 @@ module.exports = function(sequelize) {
 
             var total = (new_lease_count_YTD + renewal_count_YTD);
 
-            return total
+            return total;
           },
           new_lease_percentage: function () {
             var new_lease_count_YTD = this.getDataValue('new_lease_count_YTD');
@@ -171,10 +171,10 @@ module.exports = function(sequelize) {
             var fp_two_leased = this.getDataValue('leased_floorplan_2x2a');
             var fp_three_leased = this.getDataValue('leased_floorplan_2x2b');
             var fp_four_leased = this.getDataValue('leased_floorplan_4x2');
-            var fp_one_not_leased = this.getDataValue('leased_floorplan_1x1');
-            var fp_two_not_leased = this.getDataValue('leased_floorplan_2x2a');
-            var fp_three_not_leased = this.getDataValue('leased_floorplan_2x2b');
-            var fp_four_not_leased = this.getDataValue('leased_floorplan_4x2');
+            var fp_one_not_leased = this.getDataValue('NOT_leased_floorplan_1x1');
+            var fp_two_not_leased = this.getDataValue('NOT_leased_floorplan_2x2a');
+            var fp_three_not_leased = this.getDataValue('NOT_leased_floorplan_2x2b');
+            var fp_four_not_leased = this.getDataValue('NOT_leased_floorplan_4x2');
 
             var total_bed_count = (
               fp_one_leased + 
@@ -189,7 +189,7 @@ module.exports = function(sequelize) {
 
             var new_lease_percentage = (new_lease_count_YTD / total_bed_count);
 
-            return new_lease_percentage
+            return new_lease_percentage;
           },
           renewal_percentage: function () {
             var renewal_count_YTD = this.getDataValue('renewal_count_YTD');
@@ -198,10 +198,10 @@ module.exports = function(sequelize) {
             var fp_two_leased = this.getDataValue('leased_floorplan_2x2a');
             var fp_three_leased = this.getDataValue('leased_floorplan_2x2b');
             var fp_four_leased = this.getDataValue('leased_floorplan_4x2');
-            var fp_one_not_leased = this.getDataValue('leased_floorplan_1x1');
-            var fp_two_not_leased = this.getDataValue('leased_floorplan_2x2a');
-            var fp_three_not_leased = this.getDataValue('leased_floorplan_2x2b');
-            var fp_four_not_leased = this.getDataValue('leased_floorplan_4x2');
+            var fp_one_not_leased = this.getDataValue('NOT_leased_floorplan_1x1');
+            var fp_two_not_leased = this.getDataValue('NOT_leased_floorplan_2x2a');
+            var fp_three_not_leased = this.getDataValue('NOT_leased_floorplan_2x2b');
+            var fp_four_not_leased = this.getDataValue('NOT_leased_floorplan_4x2');
 
             var total_bed_count = (
               fp_one_leased + 
@@ -216,7 +216,7 @@ module.exports = function(sequelize) {
 
             var renewal_percentage = (renewal_count_YTD / total_bed_count);
 
-            return renewal_percentage
+            return renewal_percentage;
           },
           prelease_percentage: function () {
             var new_lease_count_YTD = this.getDataValue('new_lease_count_YTD');
@@ -228,10 +228,10 @@ module.exports = function(sequelize) {
             var fp_two_leased = this.getDataValue('leased_floorplan_2x2a');
             var fp_three_leased = this.getDataValue('leased_floorplan_2x2b');
             var fp_four_leased = this.getDataValue('leased_floorplan_4x2');
-            var fp_one_not_leased = this.getDataValue('leased_floorplan_1x1');
-            var fp_two_not_leased = this.getDataValue('leased_floorplan_2x2a');
-            var fp_three_not_leased = this.getDataValue('leased_floorplan_2x2b');
-            var fp_four_not_leased = this.getDataValue('leased_floorplan_4x2');
+            var fp_one_not_leased = this.getDataValue('NOT_leased_floorplan_1x1');
+            var fp_two_not_leased = this.getDataValue('NOT_leased_floorplan_2x2a');
+            var fp_three_not_leased = this.getDataValue('NOT_leased_floorplan_2x2b');
+            var fp_four_not_leased = this.getDataValue('NOT_leased_floorplan_4x2');
 
             var total_bed_count = (
               fp_one_leased + 
@@ -244,9 +244,9 @@ module.exports = function(sequelize) {
               fp_four_not_leased
             );
 
-            var prelease_percentage = (total_lease_count / total_bed_count);
+            var prelease_percentage = (total_lease_count / total_bed_count) * 100;
 
-            return prelease_percentage
+            return prelease_percentage;
           }
         }
       }

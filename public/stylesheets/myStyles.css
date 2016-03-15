@@ -1,0 +1,21 @@
+.show-center {
+  text-align: center; 
+}
+
+.icon-center {
+  vertical-align: text-bottom;
+}
+
+.report-panels {
+  position: inherit;
+  padding-top: 3.618em;
+}
+
+/*.traffic-panel {
+  left: 8em;
+  position: absolute;
+}
+
+.guarantor-panel {
+
+}*/

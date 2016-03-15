@@ -20,6 +20,7 @@
     "jade": "^1.11.0",
     "jade-bootstrap": "^1.0.2",
     "jquery": "^2.2.1",
+    "locus": "^1.2.0",
     "material-design-icons": "^2.2.1",
     "moment": "^2.12.0",
     "moment-timezone": "^0.5.1",
