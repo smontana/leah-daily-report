@@ -1,3 +1,93 @@
 extends ../layout
 
 block content
+  h1.text-left
+    i.icon-center.material-icons="assessment"
+    =title
+
+  form.form-horizontal.dlr-form(method="POST" action="/dashboards")
+    div.form-group
+      label(for='report_date')
+      ='Report Date   '
+      input(type="text" name="report_date" id="report_date" placeholder="Report Date" class="datepicker")
+
+    div.form-group
+      label(for='prelease_percentage_prv_year') 
+      ='Last Year\'s Prelease %   '
+      input(type="percent" name="prelease_percentage_prv_year" id="prelease_percentage_prv_year" placeholder="Prelease %")
+
+    div.form-group
+      label(for='traffic_today') 
+      ='Traffic Today   '
+      input(type="number" name="traffic_today" id="traffic_today" placeholder="# Today")
+    div.form-group
+      label(for='traffic_week') 
+      ='Traffic this Week   '
+      input(type="number" name="traffic_week" id="traffic_week" placeholder="# Week")
+
+    div.form-group
+      label(for='guarantor_received_count') 
+      ='Guarantor Paperwork Received   '
+      input(type="number" name="guarantor_received_count" id="guarantor_received_count" placeholder="# Received")
+
+    div.form-group
+      label(for='new_lease_count_today') 
+      ='New Lease Count - Today   '
+      input(type="number" name="new_lease_count_today" id="new_lease_count_today" placeholder="# Today")
+    div.form-group
+      label(for='new_lease_count_week') 
+      ='New Lease Count - Week   '
+      input(type="number" name="new_lease_count_week" id="new_lease_count_week" placeholder="# Week")
+    div.form-group
+      label(for='new_lease_count_YTD') 
+      ='New Lease Count - YTD   '
+      input(type="number" name="new_lease_count_YTD" id="new_lease_count_YTD" placeholder="# YTD")
+
+    div.form-group
+      label(for='renewal_count_today') 
+      ='Renewal Count - Today   '
+      input(type="number" name="renewal_count_today" id="renewal_count_today" placeholder="# Today")
+    div.form-group
+      label(for='renewal_count_week') 
+      ='Renewal Count - Week   '
+      input(type="number" name="renewal_count_week" id="renewal_count_week" placeholder="# Week")
+    div.form-group
+      label(for='renewal_count_YTD') 
+      ='Renewal Count - YTD   '
+      input(type="number" name="renewal_count_YTD" id="renewal_count_YTD" placeholder="# YTD")
+
+    div.form-group
+      label(for='leased_floorplan_1x1') 
+      ='Leased - 1x1 Count   '
+      input(type="number" name="leased_floorplan_1x1" id="leased_floorplan_1x1" placeholder="# 1x1")
+    div.form-group
+      label(for='leased_floorplan_2x2a') 
+      ='Leased - 2x2A Count   '
+      input(type="number" name="leased_floorplan_2x2a" id="leased_floorplan_2x2a" placeholder="# 2x2a")
+    div.form-group
+      label(for='leased_floorplan_2x2b') 
+      ='Leased - 2x2B Count   '
+      input(type="number" name="leased_floorplan_2x2b" id="leased_floorplan_2x2b" placeholder="# 2x2b")
+    div.form-group
+      label(for='leased_floorplan_4x2') 
+      ='Leased - 4x2 Count   '
+      input(type="number" name="leased_floorplan_4x2" id="leased_floorplan_4x2" placeholder="# 4x2")
+
+    div.form-group
+      label(for='NOT_leased_floorplan_1x1') 
+      ='NOT Leased - 1x1 Count   '
+      input(type="number" name="NOT_leased_floorplan_1x1" id="NOT_leased_floorplan_1x1" placeholder="# 1x1")
+    div.form-group
+      label(for='NOT_leased_floorplan_2x2a') 
+      ='NOT Leased - 2x2A Count   '
+      input(type="number" name="NOT_leased_floorplan_2x2a" id="NOT_leased_floorplan_2x2a" placeholder="# 2x2a")
+    div.form-group
+      label(for='NOT_leased_floorplan_2x2b') 
+      ='NOT Leased - 2x2B Count   '
+      input(type="number" name="NOT_leased_floorplan_2x2b" id="NOT_leased_floorplan_2x2b" placeholder="# 2x2b")
+    div.form-group
+      label(for='NOT_leased_floorplan_4x2') 
+      ='NOT Leased - 4x2 Count   '
+      input(type="number" name="NOT_leased_floorplan_4x2" id="NOT_leased_floorplan_4x2" placeholder="# 4x2")
+ 
+    input.submit(type="submit")

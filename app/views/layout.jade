@@ -62,12 +62,11 @@ html(lang="en")
   body(data-spy="scroll",data-target=".scrollspy")
     block body
       +navbar-fixed("Leah Ashlyn Montana", "navbar", "inverse")
-        +nav_item("/","active") Home
-        +nav_item("/dashboards") Dashboards
+        +nav_item("/") Home
         +nav_item("/reports") Reports
-        //- a(href='/dashboards') Dashboards
-        //- a(href='/reports') Reports
-        //- img(src="/images/logo.jpg")
+        +nav_item("/dashboards") Dashboards
+        +nav_item("/dashboards/new") New
+        
 
     block content
 
@@ -78,4 +77,4 @@ html(lang="en")
       script(src='/javascripts/picker.date.js')
       script(src='/javascripts/d3.min.js')
       script(src='/javascripts/c3.min.js')
-      //- script(src='/javascripts/frontend.js')
+      script(src='/javascripts/frontend.js')
