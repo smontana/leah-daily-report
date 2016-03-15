@@ -16,7 +16,7 @@ module.exports = function(connection, models) {
       var report = report[0];
       var report_date = report.report_date_beautify();
       var prelease_percentage_prv_year = parseFloat(report.prelease_percentage_prv_year);
-      var title = 'Daily Leasing Report - ' + report_date;
+      var title = 'Daily Leasing Report';
 
       console.log(JSON.stringify(report, null, 3));
 
