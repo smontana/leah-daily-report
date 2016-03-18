@@ -1,4 +1,12 @@
 extends ../layout
 
 block content
-  h1=title
+  h1
+    i.material-icons="insert_chart"
+    =title
+
+  ul
+  each report in reports
+    - var id = report.report_id
+    li.thumb-list
+      a(href="/reports/#{id}")= report.name
