@@ -21,6 +21,14 @@ module.exports = function (connection, models) {
     var form_params = req.body;
     var report_date = form_params.report_date;
     var report_date_formatted = moment(report_date).format("YYYY-MM-DD");
+    var floorplan_1x1_total = 16;
+    var floorplan_2x2a_total = 96;
+    var floorplan_2x2b_total = 96;
+    var floorplan_4x2_total = 192;
+    var NOT_leased_floorplan_1x1 = floorplan_1x1_total - form_params.leased_floorplan_1x1;
+    var NOT_leased_floorplan_2x2a = floorplan_2x2a_total - form_params.leased_floorplan_2x2a;
+    var NOT_leased_floorplan_2x2b = floorplan_2x2b_total - form_params.leased_floorplan_2x2b;
+    var NOT_leased_floorplan_4x2 = floorplan_4x2_total - form_params.leased_floorplan_4x2;
 
     // console.log(JSON.stringify(req.body, null, 3));
 
@@ -40,10 +48,10 @@ module.exports = function (connection, models) {
       leased_floorplan_2x2a: form_params.leased_floorplan_2x2a,
       leased_floorplan_2x2b: form_params.leased_floorplan_2x2b,
       leased_floorplan_4x2: form_params.leased_floorplan_4x2,
-      NOT_leased_floorplan_1x1: form_params.NOT_leased_floorplan_1x1,
-      NOT_leased_floorplan_2x2a: form_params.NOT_leased_floorplan_2x2a,
-      NOT_leased_floorplan_2x2b: form_params.NOT_leased_floorplan_2x2b,
-      NOT_leased_floorplan_4x2: form_params.NOT_leased_floorplan_4x2
+      NOT_leased_floorplan_1x1: NOT_leased_floorplan_1x1,
+      NOT_leased_floorplan_2x2a: NOT_leased_floorplan_2x2a,
+      NOT_leased_floorplan_2x2b: NOT_leased_floorplan_2x2b,
+      NOT_leased_floorplan_4x2: NOT_leased_floorplan_4x2
     };
 
     var new_record = models.DailyReport.build(submission);
