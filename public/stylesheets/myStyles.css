@@ -14,3 +14,43 @@
 .dlr-form {
   padding-left: 3.618em;
 }
+
+.lease-count-panel .panel {
+  height: 329px;
+}
+
+.vertical-center {
+  padding-top: 4em;
+  vertical-align: middle;
+}
+
+
+/*.equal-height {
+    height: 7.236em;
+}*/
+
+/*flex, .flex > div[class='col-'] {  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex:1 0 auto;
+  margin-top: 1%;
+}
+
+.panel {
+   display: flex;
+   flex-direction:column;
+   align-content:stretch; 
+}
+
+.panel-body {
+   display: flex;
+   flex-grow:1;
+}
+@media screen and (min-width:320px) and (max-width:1000px){
+.flex, .flex > div[class='col-'] {
+display:block; 
+}
+}*/

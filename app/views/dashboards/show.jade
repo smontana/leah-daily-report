@@ -32,7 +32,9 @@ block content
           =report_date
 
     div.report-panels
-      div.row
+
+      div.row-fluid
+
         .col-md-4
           .traffic-panel
             +panel-default("Traffic")
@@ -75,35 +77,36 @@ block content
                     div.prv-prelease
                       =prelease_percentage_prv_year
 
-      div.row
-        .col-md-6.col-md-offset-3
+      div.row-fluid
+
+        .col-md-6
           .lease-count-panel
             +panel-default("Lease Totals")
-              table.table.table-striped.table-bordered.table-hover.table-condensed
-                tbody
-                  tr
-                    th.text-center='Type'
-                    th.text-center='Today'
-                    th.text-center='Week'
-                    th.text-center='YTD'
-                  tr
-                    td='New Lease'
-                    td=new_lease_count_today
-                    td=new_lease_count_week
-                    td=new_lease_count_YTD
-                  tr
-                    td='Renewal'
-                    td=renewal_count_today
-                    td=renewal_count_week
-                    td=renewal_count_YTD
-                  tr
-                    td='Total'
-                    td=(new_lease_count_today + renewal_count_today)
-                    td=(new_lease_count_week + renewal_count_week)
-                    td=(new_lease_count_YTD + renewal_count_YTD)
+              div.vertical-center
+                table.table.table-striped.table-bordered.table-hover.table-condensed
+                  tbody
+                    tr
+                      th.text-center='Type'
+                      th.text-center='Today'
+                      th.text-center='Week'
+                      th.text-center='YTD'
+                    tr
+                      td='New Lease'
+                      td=new_lease_count_today
+                      td=new_lease_count_week
+                      td=new_lease_count_YTD
+                    tr
+                      td='Renewal'
+                      td=renewal_count_today
+                      td=renewal_count_week
+                      td=renewal_count_YTD
+                    tr
+                      td='Total'
+                      td=(new_lease_count_today + renewal_count_today)
+                      td=(new_lease_count_week + renewal_count_week)
+                      td=(new_lease_count_YTD + renewal_count_YTD)
 
-      div.row
-        .col-md-6.col-md-offset-3
+        .col-md-6
           .daily-lease-breakdown-panel
             +panel-default("Daily Lease Breakdown")
 

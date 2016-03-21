@@ -1,0 +1,56 @@
+@media print {
+
+  body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .col-md-6 {
+    page-break-inside: avoid;
+  }
+
+  .col-md-4 {
+    page-break-inside: avoid;
+  }
+
+  .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-print-color-adjust: exact;
+  }
+
+  .panel-default {
+    border-color: #ddd;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .panel-default .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    -webkit-print-color-adjust: exact;
+  }
+
+.table-bordered {
+  border: 1px solid #ddd;
+  -webkit-print-color-adjust: exact;
+}
+
+  page[size="A4"] {
+    background: #747474;
+    width: 21cm;
+    height: 29.7cm;
+    display: block;
+    margin:0 0 0 0;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  }
+  body, page[size="A4"] {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
