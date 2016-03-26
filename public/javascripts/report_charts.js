@@ -17,7 +17,7 @@ function build_prelease_report(data) {
   dates.unshift('x');
 
   var chart = c3.generate({
-      bindto: "#DLR_prelease_report_chart",
+      bindto: "#report_chart",
       data: {
           x: 'x',
   //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
@@ -53,8 +53,76 @@ function build_prelease_report(data) {
   });
 }
 
+function build_unit_lease_type_report(data) {
+  floorplan_1x1_percentage = _.map(data, function(stats) {
+    var floorplan_1x1_pct = ((stats.leased_floorplan_1x1 / stats.floorplan_1x1_total) * 100);
+    return floorplan_1x1_pct.toFixed(2);
+  })
+  floorplan_1x1_percentage.unshift('floorplan_1x1_percentage');
 
+  floorplan_2x2a_percentage = _.map(data, function(stats) {
+    var floorplan_2x2a_pct = ((stats.leased_floorplan_2x2a / stats.floorplan_2x2a_total) * 100);
+    return floorplan_2x2a_pct.toFixed(2);
+  })
+  floorplan_2x2a_percentage.unshift('floorplan_2x2a_percentage');
 
+  floorplan_2x2b_percentage = _.map(data, function(stats) {
+    var floorplan_2x2b_pct = ((stats.leased_floorplan_2x2b / stats.floorplan_2x2b_total) * 100);
+    return floorplan_2x2b_pct.toFixed(2);
+  })
+  floorplan_2x2b_percentage.unshift('floorplan_2x2b_percentage');
+
+  floorplan_4x2_percentage = _.map(data, function(stats) {
+    var floorplan_4x2_pct = ((stats.leased_floorplan_4x2 / stats.floorplan_4x2_total) * 100);
+    return floorplan_4x2_pct.toFixed(2);
+  })
+  floorplan_4x2_percentage.unshift('floorplan_4x2_percentage');
+
+  dates = _.map(data, function(stats) {
+    return stats.report_date
+  })
+  dates.unshift('x');
+
+  var chart = c3.generate({
+      bindto: "#report_chart",
+      data: {
+          x: 'x',
+  //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+          columns: [
+              dates,
+              floorplan_1x1_percentage,
+              floorplan_2x2a_percentage,
+              floorplan_2x2b_percentage,
+              floorplan_4x2_percentage
+          ],
+          names: {
+            dates: 'Date',
+            floorplan_1x1_percentage: '1x1 Leased %',
+            floorplan_2x2a_percentage: '2x2 A Leased %',
+            floorplan_2x2b_percentage: '2x2 B Leased %',
+            floorplan_4x2_percentage: '4x2 Leased %',
+          },
+          labels: false
+      },
+      axis: {
+          x: {
+              type: 'timeseries',
+              tick: {
+                  format: '%m-%d-%y',
+                  fit: true
+              },
+          }
+      },
+      grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+  });
+}
 
 $(document).ready(function(event){
   success_callback = function(data, status, xhr){
@@ -64,6 +132,9 @@ $(document).ready(function(event){
 
     if (id == 'prelease-report') {
       build_prelease_report(data.data);
+
+    }else if (id == 'unit-lease-report') {
+      build_unit_lease_type_report(data.data);
 
     // }else if (id == 'qpa-avg-weekly-report') {
     //   build_timeseries_chart_qpa_weekly(data.data);

@@ -19,6 +19,21 @@ module.exports = function(connection, models) {
         GROUP BY `d`.`report_date` \
         ORDER BY `d`.`report_date`";
 
+    } else if (id == 'unit-lease-report') {
+      var query = "SELECT \
+        DATE_FORMAT(`d`.`report_date`, '%Y-%m-%d') AS `report_date`, \
+        SUM(`d`.`leased_floorplan_1x1`) AS `leased_floorplan_1x1`, \
+        SUM(`d`.`leased_floorplan_2x2a`) AS `leased_floorplan_2x2a`, \
+        SUM(`d`.`leased_floorplan_2x2b`) AS `leased_floorplan_2x2b`, \
+        SUM(`d`.`leased_floorplan_4x2`) AS `leased_floorplan_4x2`, \
+        SUM(`d`.`leased_floorplan_1x1` + `d`.`NOT_leased_floorplan_1x1`) AS `floorplan_1x1_total`, \
+        SUM(`d`.`leased_floorplan_2x2a` + `d`.`NOT_leased_floorplan_2x2a`) AS `floorplan_2x2a_total`, \
+        SUM(`d`.`leased_floorplan_2x2b` + `d`.`NOT_leased_floorplan_2x2b`) AS `floorplan_2x2b_total`, \
+        SUM(`d`.`leased_floorplan_4x2` + `d`.`NOT_leased_floorplan_4x2`) AS `floorplan_4x2_total` \
+        FROM `DailyReports` AS `d` \
+        GROUP BY `d`.`report_date` \
+        ORDER BY `d`.`report_date`";
+
     // }else if (id == 'qpa-avg-weekly-report') {
     //   var query = "SELECT \
     //     DATE_FORMAT(`qpa_overall`.`week_ending`, '%Y-%m-%d') AS `week_ending`, \

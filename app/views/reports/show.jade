@@ -1,12 +1,14 @@
 extends ../layout
 
 block content
+  - var prelease_report = (id == 'prelease_report')
+  - var unit_lease_type_report = (id == 'unit-lease-report')
 
   div#report_chart_title
     h1.report-chart-title
       i.material-icons="insert_chart"
       =title
 
-  div#DLR_prelease_report_chart
-
+  div#report_chart
+      
   script(src='/javascripts/report_charts.js' charset='utf-8')
