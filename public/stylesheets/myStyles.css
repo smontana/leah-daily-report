@@ -24,6 +24,11 @@
   vertical-align: middle;
 }
 
+.pic-for-leah {
+  float: right;
+  padding-right: 48%;
+}
+
 
 /*.equal-height {
     height: 7.236em;
