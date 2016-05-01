@@ -29,6 +29,8 @@ module.exports = function (connection, models) {
     var NOT_leased_floorplan_2x2a = floorplan_2x2a_total - form_params.leased_floorplan_2x2a;
     var NOT_leased_floorplan_2x2b = floorplan_2x2b_total - form_params.leased_floorplan_2x2b;
     var NOT_leased_floorplan_4x2 = floorplan_4x2_total - form_params.leased_floorplan_4x2;
+    var total_furnished_count_2x2 = 10;
+    var total_furnished_count_4x2 = 5;
 
     // console.log(JSON.stringify(req.body, null, 3));
 
@@ -51,7 +53,11 @@ module.exports = function (connection, models) {
       NOT_leased_floorplan_1x1: NOT_leased_floorplan_1x1,
       NOT_leased_floorplan_2x2a: NOT_leased_floorplan_2x2a,
       NOT_leased_floorplan_2x2b: NOT_leased_floorplan_2x2b,
-      NOT_leased_floorplan_4x2: NOT_leased_floorplan_4x2
+      NOT_leased_floorplan_4x2: NOT_leased_floorplan_4x2,
+      total_furnished_count_2x2: form_params.total_furnished_count_2x2,
+      total_furnished_count_4x2: form_params.total_furnished_count_4x2,
+      leased_furnished_count_2x2: form_params.leased_furnished_count_2x2,
+      leased_furnished_count_4x2: form_params.leased_furnished_count_4x2
     };
 
     var new_record = models.DailyReport.build(submission);
@@ -81,12 +87,18 @@ module.exports = function (connection, models) {
       var renewal_percentage = parseFloat(report.renewal_percentage());
       var prelease_percentage = parseFloat(report.prelease_percentage());
       var prelease_percentage_prv_year = parseFloat(report.prelease_percentage_prv_year);
+      var leased_2x2_furnishings_percentage = parseFloat(report.leased_2x2_furnishings_percentage());
+      var leased_4x2_furnishings_percentage = parseFloat(report.leased_4x2_furnishings_percentage());
+      var total_leased_furnishings_percentage = parseFloat(report.total_leased_furnishings_percentage());
 
       guarantor_percentage = (guarantor_percentage * 100).toFixed(2);
       new_lease_percentage = (new_lease_percentage * 100).toFixed(2);
       renewal_percentage = (renewal_percentage * 100).toFixed(2);
       prelease_percentage = prelease_percentage.toFixed(2);
       prelease_percentage_prv_year = (prelease_percentage_prv_year * 100).toFixed(2);
+      leased_2x2_furnishings_percentage = (leased_2x2_furnishings_percentage * 100).toFixed(2);
+      leased_4x2_furnishings_percentage = (leased_4x2_furnishings_percentage * 100).toFixed(2);
+      total_leased_furnishings_percentage = (total_leased_furnishings_percentage * 100).toFixed(2);
 
       var console_check = {
         total_bed_count: total_bed_count,
@@ -95,7 +107,10 @@ module.exports = function (connection, models) {
         new_lease_percentage: new_lease_percentage,
         renewal_percentage: renewal_percentage,
         prelease_percentage: prelease_percentage,
-        prelease_percentage_prv_year: prelease_percentage_prv_year
+        prelease_percentage_prv_year: prelease_percentage_prv_year,
+        leased_2x2_furnishings_percentage: leased_2x2_furnishings_percentage,
+        leased_4x2_furnishings_percentage: leased_4x2_furnishings_percentage,
+        total_leased_furnishings_percentage: total_leased_furnishings_percentage
       };
 
       console.log(JSON.stringify(console_check, null, 3));
@@ -104,13 +119,17 @@ module.exports = function (connection, models) {
         title: title,
         report: report,
         report_date: report_date,
+        report_date_str: report_date.toString(),
         total_bed_count: total_bed_count,
         guarantor_percentage: guarantor_percentage,
         total_lease_count: total_lease_count,
         new_lease_percentage: new_lease_percentage,
         renewal_percentage: renewal_percentage,
         prelease_percentage: prelease_percentage,
-        prelease_percentage_prv_year: prelease_percentage_prv_year
+        prelease_percentage_prv_year: prelease_percentage_prv_year,
+        leased_2x2_furnishings_percentage: leased_2x2_furnishings_percentage,
+        leased_4x2_furnishings_percentage: leased_4x2_furnishings_percentage,
+        total_leased_furnishings_percentage: total_leased_furnishings_percentage
       });
     });
   });

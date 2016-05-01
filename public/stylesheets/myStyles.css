@@ -1,3 +1,12 @@
+::-webkit-input-placeholder {
+ font-size: 11.5px;
+ /*color: #d0cdfa;*/
+ /*text-transform: uppercase;
+ text-transform: uppercase;*/
+ text-align: center;
+ /*font-weight: bold;*/
+}
+
 .show-center {
   text-align: center; 
 }
@@ -16,7 +25,11 @@
 }
 
 .lease-count-panel .panel {
-  height: 329px;
+  height: 309px;
+}
+
+.daily-lease-breakdown-panel .panel {
+  height: 309px;
 }
 
 .vertical-center {

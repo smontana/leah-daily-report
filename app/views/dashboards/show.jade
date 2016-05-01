@@ -19,6 +19,11 @@ block content
   - var NOT_leased_floorplan_2x2a = report.NOT_leased_floorplan_2x2a
   - var NOT_leased_floorplan_2x2b = report.NOT_leased_floorplan_2x2b
   - var NOT_leased_floorplan_4x2 = report.NOT_leased_floorplan_4x2
+  - var leased_furnished_count_2x2 = report.leased_furnished_count_2x2
+  - var leased_furnished_count_4x2 = report.leased_furnished_count_4x2
+  - var total_furnished_count_2x2 = report.total_furnished_count_2x2
+  - var total_furnished_count_4x2 = report.total_furnished_count_4x2
+  - var show_furnishings_breakdown = (Date.parse(report_date_str) > Date.parse('2016-05-01'))
 
   div.container-fluid
 
@@ -31,7 +36,7 @@ block content
           i.icon-center.material-icons="today"
           =report_date
 
-    div.report-panels
+    div.report-panels.last-print-item
 
       div.row-fluid
 
@@ -86,7 +91,7 @@ block content
                 table.table.table-striped.table-bordered.table-hover.table-condensed
                   tbody
                     tr
-                      th.text-center='Type'
+                      th.text-center='Lease Type'
                       th.text-center='Today'
                       th.text-center='Week'
                       th.text-center='YTD'
@@ -142,3 +147,33 @@ block content
                     td=leased_floorplan_4x2
                     td=NOT_leased_floorplan_4x2
 
+      if show_furnishings_breakdown
+        div.row-fluid
+
+          .col-md-6.col-md-offset-3
+            .furnishing-breakdown-panel
+              +panel-default("Furnished Units Breakdown")
+                div
+                  table.table.table-striped.table-bordered.table-hover.table-condensed
+                    tbody
+                      tr
+                        th.text-center='Unit Type'
+                        th.text-center='Furniture Leased'
+                        th.text-center='Left to Lease'
+                        th.text-center='Furnished %'
+                      tr
+                        td='2x2 (A and B)'
+                        td=leased_furnished_count_2x2
+                        td=total_furnished_count_2x2
+                        td=leased_2x2_furnishings_percentage
+                      tr
+                        td='4x2'
+                        td=leased_furnished_count_4x2
+                        td=total_furnished_count_4x2
+                        td=leased_4x2_furnishings_percentage
+                      tr
+                        td='Total'
+                        td=(leased_furnished_count_2x2 + leased_furnished_count_4x2)
+                        td=(total_furnished_count_2x2 + total_furnished_count_4x2)
+                        td=total_leased_furnishings_percentage
+                    
