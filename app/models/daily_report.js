@@ -265,7 +265,8 @@ module.exports = function(sequelize) {
             var leased_furnished_count_2x2 = this.getDataValue('leased_furnished_count_2x2');
             var total_furnished_count_2x2 = this.getDataValue('total_furnished_count_2x2');
 
-            var leased_2x2_furnishings_percentage = (leased_furnished_count_2x2 / total_furnished_count_2x2);
+            var total_available_2x2 = (leased_furnished_count_2x2 + total_furnished_count_2x2);
+            var leased_2x2_furnishings_percentage = (leased_furnished_count_2x2 / total_available_2x2);
 
             return leased_2x2_furnishings_percentage;
           },
@@ -273,7 +274,8 @@ module.exports = function(sequelize) {
             var leased_furnished_count_4x2 = this.getDataValue('leased_furnished_count_4x2');
             var total_furnished_count_4x2 = this.getDataValue('total_furnished_count_4x2');
 
-            var leased_4x2_furnishings_percentage = (leased_furnished_count_4x2 / total_furnished_count_4x2);
+            var total_available_4x2 = (leased_furnished_count_4x2 + total_furnished_count_4x2);
+            var leased_4x2_furnishings_percentage = (leased_furnished_count_4x2 / total_available_4x2);
 
             return leased_4x2_furnishings_percentage;
           },
@@ -284,9 +286,9 @@ module.exports = function(sequelize) {
             var total_furnished_count_4x2 = this.getDataValue('total_furnished_count_4x2');
 
             var combined_leased_furnishings_count = (leased_furnished_count_2x2 + leased_furnished_count_4x2);
-            var combined_total_furnishings_count = (total_furnished_count_2x2 + total_furnished_count_4x2);
+            var total_available = (leased_furnished_count_2x2 + total_furnished_count_2x2 + leased_furnished_count_4x2 + total_furnished_count_4x2);
 
-            var total_leased_furnishings_percentage = (combined_leased_furnishings_count / combined_total_furnishings_count);
+            var total_leased_furnishings_percentage = (combined_leased_furnishings_count / total_available);
 
             return total_leased_furnishings_percentage;
           }

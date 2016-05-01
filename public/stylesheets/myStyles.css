@@ -32,16 +32,61 @@
   height: 309px;
 }
 
+.furnishing-breakdown-panel .panel {
+  height: auto;
+}
+
 .vertical-center {
   padding-top: 4em;
   vertical-align: middle;
 }
 
 .pic-for-leah {
-  float: right;
-  padding-right: 48%;
+  float: left;
+  padding-top: 5em;
+  padding-left: 3em;
+  padding-bottom: 10em;
 }
 
+.newDLR-top-hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 3px;
+}
+
+.newDLR-hr { 
+  display: block;
+  /*width: 75%;*/
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.newDLR-bottom-hr { 
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 3px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 1em;
+}
+
+.col-centered{
+  margin-left: 47.5%;
+  float: none;
+}
 
 /*.equal-height {
     height: 7.236em;

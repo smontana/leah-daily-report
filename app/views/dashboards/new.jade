@@ -1,20 +1,27 @@
 extends ../layout
 
 block content
-  h1.text-left
+  h1.text-center
     i.icon-center.material-icons="assessment"
     =title
 
   form.form-horizontal.dlr-form(method="POST" action="/dashboards")
+
+    div.newDLR-top-hr
+
     div.form-group
       label(for='report_date')
       ='Report Date   '
       input(type="text" name="report_date" id="report_date" placeholder="Report Date" class="datepicker")
 
+    div.newDLR-hr
+
     div.form-group
       label(for='prelease_percentage_prv_year') 
       ='Last Year\'s Prelease %   '
       input(type="percent" name="prelease_percentage_prv_year" id="prelease_percentage_prv_year" placeholder="ex: 0.12345")
+
+    div.newDLR-hr
 
     div.form-group
       label(for='traffic_today') 
@@ -25,10 +32,14 @@ block content
       ='Traffic this Week   '
       input(type="number" name="traffic_week" id="traffic_week" placeholder="# Week")
 
+    div.newDLR-hr
+
     div.form-group
       label(for='guarantor_received_count') 
       ='Guarantor Paperwork Received   '
       input(type="number" name="guarantor_received_count" id="guarantor_received_count" placeholder="# Received")
+
+    div.newDLR-hr
 
     div.form-group
       label(for='new_lease_count_today') 
@@ -43,6 +54,8 @@ block content
       ='New Lease Count - YTD   '
       input(type="number" name="new_lease_count_YTD" id="new_lease_count_YTD" placeholder="# YTD")
 
+    div.newDLR-hr
+
     div.form-group
       label(for='renewal_count_today') 
       ='Renewal Count - Today   '
@@ -55,6 +68,8 @@ block content
       label(for='renewal_count_YTD') 
       ='Renewal Count - YTD   '
       input(type="number" name="renewal_count_YTD" id="renewal_count_YTD" placeholder="# YTD")
+
+    div.newDLR-hr
 
     div.form-group
       label(for='leased_floorplan_1x1') 
@@ -73,25 +88,34 @@ block content
       ='Leased - 4x2 Count   '
       input(type="number" name="leased_floorplan_4x2" id="leased_floorplan_4x2" placeholder="# 4x2")
     
+    div.newDLR-hr
+
     div.form-group
       label(for='leased_furnished_count_2x2') 
-      ='Leased Furnishing - 2x2 Count   '
+      ='Leased Furniture - 2x2 Count   '
       input(type="number" name="leased_furnished_count_2x2" id="leased_furnished_count_2x2" placeholder="# 2x2 w/ Leased Furnishing")
     div.form-group
       label(for='total_furnished_count_2x2') 
-      ='Total Furnished - 2x2 Unit Count  '
-      input(type="number" name="total_furnished_count_2x2" id="total_furnished_count_2x2" placeholder="# 2x2 Total Available")
+      ='Left to Lease - 2x2 Count  '
+      input(type="number" name="total_furnished_count_2x2" id="total_furnished_count_2x2" placeholder="# 2x2's Left to Lease")
+
+    div.newDLR-hr
 
     div.form-group
       label(for='leased_furnished_count_4x2') 
-      ='Leased Furnishing - 4x2 Count   '
+      ='Leased Furniture - 4x2 Count   '
       input(type="number" name="leased_furnished_count_4x2" id="leased_furnished_count_4x2" placeholder="# 4x2 w/ Leased Furnishing")
     div.form-group
       label(for='total_furnished_count_4x2') 
-      ='Total Furnished - 4x2 Unit Count  '
-      input(type="number" name="total_furnished_count_4x2" id="total_furnished_count_4x2" placeholder="# 4x2 Total Available")
+      ='Left to Lease - 4x2 Count  '
+      input(type="number" name="total_furnished_count_4x2" id="total_furnished_count_4x2" placeholder="# 4x2's Left to Lease")
+
+    div.newDLR-hr
     
-    input.submit(type="submit")
+    div.col-centered
+      input.submit(type="submit")
+
+    div.newDLR-bottom-hr
 
     div.pic-for-leah
       img(src="/images/sis.jpg")
