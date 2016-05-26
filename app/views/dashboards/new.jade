@@ -5,7 +5,7 @@ block content
     i.icon-center.material-icons="assessment"
     =title
 
-  form.form-horizontal.dlr-form(method="POST" action="/dashboards")
+  form.form-horizontal.dlr-form(id="myForm" method="POST" action="/dashboards")
 
     div.newDLR-top-hr
 
@@ -113,7 +113,84 @@ block content
     div.newDLR-hr
     
     div.col-centered
-      input.submit(type="submit")
+      //- Button trigger modal
+      button.btn.btn-primary.btn-lg(id='confirm_modal' type='button' data-toggle='modal' data-target='#myModal')
+        | Submit
+      //- Modal
+      #myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') ×
+
+              h4#myModalLabel.modal-title Review
+            .modal-body
+
+              table.table.table-striped.table-bordered.table-hover.table-condensed
+
+                tr
+                  th Report Date
+                  td.text-center#report_date_show
+                tr
+                  th Prelease Percentage Prv Year
+                  td.text-center#prelease_percentage_prv_year_show
+                tr
+                  th Traffic Today
+                  td.text-center#traffic_today_show
+                tr
+                  th Traffic Week
+                  td.text-center#traffic_week_show
+                tr
+                  th Guarantor Received Count
+                  td.text-center#guarantor_received_count_show
+                tr
+                  th New Lease Count Today
+                  td.text-center#new_lease_count_today_show
+                tr
+                  th New Lease Count Week
+                  td.text-center#new_lease_count_week_show
+                tr
+                  th New Lease Count YTD
+                  td.text-center#new_lease_count_YTD_show
+                tr
+                  th Renewal Count Today
+                  td.text-center#renewal_count_today_show
+                tr
+                  th Renewal Count Week
+                  td.text-center#renewal_count_week_show
+                tr
+                  th Renewal Count YTD
+                  td.text-center#renewal_count_YTD_show
+                tr
+                  th Leased Floorplan 1x1
+                  td.text-center#leased_floorplan_1x1_show
+                tr
+                  th Leased Floorplan 2x2 A
+                  td.text-center#leased_floorplan_2x2a_show
+                tr
+                  th Leased Floorplan 2x2 B
+                  td.text-center#leased_floorplan_2x2b_show
+                tr
+                  th Leased Floorplan 4x2
+                  td.text-center#leased_floorplan_4x2_show
+                tr
+                  th Leased Furnished Count 2x2
+                  td.text-center#leased_furnished_count_2x2_show
+                tr
+                  th Total Furnished Count 2x2
+                  td.text-center#total_furnished_count_2x2_show
+                tr
+                  th Leased Furnished Count 4x2
+                  td.text-center#leased_furnished_count_4x2_show
+                tr
+                  th Total Furnished Count 4x2
+                  td.text-center#total_furnished_count_4x2_show
+
+            .modal-footer
+              button.btn.btn-default(type='button' data-dismiss='modal') Wait, lemme change something. . .
+              button.btn.btn-primary(id='form_submit' type='submit') Save
 
     div.newDLR-bottom-hr
 

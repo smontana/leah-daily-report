@@ -88,6 +88,14 @@
   float: none;
 }
 
+input {
+  padding: 0.382em;
+  border-radius: 0.382em;
+  margin-left: 0.618em;
+  border-style: none;
+  border: 1px solid #dedede;
+}
+
 /*.equal-height {
     height: 7.236em;
 }*/

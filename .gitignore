@@ -2,3 +2,11 @@ node_modules
 .env
 *.DS_Store
 database.json
+npm-debug.log
+
+app/routes/emp_login.js
+app/views/emp_login/
+public/images/dark_embroidery.png
+public/images/ios_clock.svg
+public/stylesheets/clock.css
+public/stylesheets/emp_login_form.css

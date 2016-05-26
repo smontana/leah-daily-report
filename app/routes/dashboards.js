@@ -136,6 +136,11 @@ module.exports = function (connection, models) {
 
   var page;
   var per_page;
+  var navbar_items = [ 
+    {name: 'Dashboards', path: 'dashboards'}, 
+    {name: 'Reports', path: 'reports'}, 
+    {name: 'New', path: 'dashboards/new'}
+  ];
 
   router.get('/', function (req, res, next){
     page = parseInt(req.query.page) || 1;
@@ -158,7 +163,8 @@ module.exports = function (connection, models) {
          page: page,
          per_page: per_page,
          total_pages: total_pages,
-         total: total
+         total: total,
+         navbar_items: navbar_items
         });
       });
 
@@ -179,7 +185,8 @@ module.exports = function (connection, models) {
          page: page,
          per_page: per_page,
          total_pages: total_pages,
-         total: total
+         total: total,
+         navbar_items: navbar_items
         });
       });
     }
