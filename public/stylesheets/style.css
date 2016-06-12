@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(../images/paisley.png) repeat;
+  /*background: url(../images/dark_embroidery.png) repeat;*/
 }
 
 a {

@@ -22,6 +22,7 @@
 
 .dlr-form {
   padding-left: 3.618em;
+  padding-right: 3.618em;
 }
 
 .lease-count-panel .panel {
@@ -41,8 +42,7 @@
   vertical-align: middle;
 }
 
-.pic-for-leah {
-  float: left;
+.quote-for-leah {
   padding-top: 5em;
   padding-left: 3em;
   padding-bottom: 10em;
@@ -94,6 +94,14 @@ input {
   margin-left: 0.618em;
   border-style: none;
   border: 1px solid #dedede;
+}
+
+.navbar {
+  background: url(../images/dark_embroidery.png) repeat;
+}
+
+div.panel.new-dlr {
+  margin-top: 3.618em;
 }
 
 /*.equal-height {

@@ -1,198 +1,220 @@
 extends ../layout
 
 block content
-  h1.text-center
-    i.icon-center.material-icons="assessment"
-    =title
+  div.container
 
-  form.form-horizontal.dlr-form(id="myForm" method="POST" action="/dashboards")
+    div.panel.new-dlr
+      div.title
+        h1.text-center
+          i.icon-center.material-icons="assessment"
+          =title
 
-    div.newDLR-top-hr
+      form.form-horizontal.dlr-form(id="myForm" method="POST" action="/dashboards")
 
-    div.form-group
-      label(for='report_date')
-      ='Report Date   '
-      input(type="text" name="report_date" id="report_date" placeholder="Report Date" class="datepicker")
+        div.newDLR-top-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='report_date')
+          ='Report Date   '
+          input(type="text" name="report_date" id="report_date" placeholder="Report Date" class="datepicker")
 
-    div.form-group
-      label(for='prelease_percentage_prv_year') 
-      ='Last Year\'s Prelease %   '
-      input(type="percent" name="prelease_percentage_prv_year" id="prelease_percentage_prv_year" placeholder="ex: 0.12345")
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='prelease_percentage_prv_year') 
+          ='Last Year\'s Prelease %   '
+          input(type="percent" name="prelease_percentage_prv_year" id="prelease_percentage_prv_year" placeholder="ex: 0.12345")
 
-    div.form-group
-      label(for='traffic_today') 
-      ='Traffic Today   '
-      input(type="number" name="traffic_today" id="traffic_today" placeholder="# Today")
-    div.form-group
-      label(for='traffic_week') 
-      ='Traffic this Week   '
-      input(type="number" name="traffic_week" id="traffic_week" placeholder="# Week")
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='traffic_today') 
+          ='Traffic Today   '
+          input(type="number" name="traffic_today" id="traffic_today" placeholder="# Today")
+        div.form-group
+          label(for='traffic_week') 
+          ='Traffic this Week   '
+          input(type="number" name="traffic_week" id="traffic_week" placeholder="# Week")
 
-    div.form-group
-      label(for='guarantor_received_count') 
-      ='Guarantor Paperwork Received   '
-      input(type="number" name="guarantor_received_count" id="guarantor_received_count" placeholder="# Received")
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='guarantor_received_count') 
+          ='Guarantor Paperwork Received   '
+          input(type="number" name="guarantor_received_count" id="guarantor_received_count" placeholder="# Received")
 
-    div.form-group
-      label(for='new_lease_count_today') 
-      ='New Lease Count - Today   '
-      input(type="number" name="new_lease_count_today" id="new_lease_count_today" placeholder="# Today")
-    div.form-group
-      label(for='new_lease_count_week') 
-      ='New Lease Count - Week   '
-      input(type="number" name="new_lease_count_week" id="new_lease_count_week" placeholder="# Week")
-    div.form-group
-      label(for='new_lease_count_YTD') 
-      ='New Lease Count - YTD   '
-      input(type="number" name="new_lease_count_YTD" id="new_lease_count_YTD" placeholder="# YTD")
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='new_lease_count_today') 
+          ='New Lease Count - Today   '
+          input(type="number" name="new_lease_count_today" id="new_lease_count_today" placeholder="# Today")
+        div.form-group
+          label(for='new_lease_count_week') 
+          ='New Lease Count - Week   '
+          input(type="number" name="new_lease_count_week" id="new_lease_count_week" placeholder="# Week")
+        div.form-group
+          label(for='new_lease_count_YTD') 
+          ='New Lease Count - YTD   '
+          input(type="number" name="new_lease_count_YTD" id="new_lease_count_YTD" placeholder="# YTD")
 
-    div.form-group
-      label(for='renewal_count_today') 
-      ='Renewal Count - Today   '
-      input(type="number" name="renewal_count_today" id="renewal_count_today" placeholder="# Today")
-    div.form-group
-      label(for='renewal_count_week') 
-      ='Renewal Count - Week   '
-      input(type="number" name="renewal_count_week" id="renewal_count_week" placeholder="# Week")
-    div.form-group
-      label(for='renewal_count_YTD') 
-      ='Renewal Count - YTD   '
-      input(type="number" name="renewal_count_YTD" id="renewal_count_YTD" placeholder="# YTD")
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='renewal_count_today') 
+          ='Renewal Count - Today   '
+          input(type="number" name="renewal_count_today" id="renewal_count_today" placeholder="# Today")
+        div.form-group
+          label(for='renewal_count_week') 
+          ='Renewal Count - Week   '
+          input(type="number" name="renewal_count_week" id="renewal_count_week" placeholder="# Week")
+        div.form-group
+          label(for='renewal_count_YTD') 
+          ='Renewal Count - YTD   '
+          input(type="number" name="renewal_count_YTD" id="renewal_count_YTD" placeholder="# YTD")
 
-    div.form-group
-      label(for='leased_floorplan_1x1') 
-      ='Leased - 1x1 Count   '
-      input(type="number" name="leased_floorplan_1x1" id="leased_floorplan_1x1" placeholder="# 1x1")
-    div.form-group
-      label(for='leased_floorplan_2x2a') 
-      ='Leased - 2x2A Count   '
-      input(type="number" name="leased_floorplan_2x2a" id="leased_floorplan_2x2a" placeholder="# 2x2a")
-    div.form-group
-      label(for='leased_floorplan_2x2b') 
-      ='Leased - 2x2B Count   '
-      input(type="number" name="leased_floorplan_2x2b" id="leased_floorplan_2x2b" placeholder="# 2x2b")
-    div.form-group
-      label(for='leased_floorplan_4x2') 
-      ='Leased - 4x2 Count   '
-      input(type="number" name="leased_floorplan_4x2" id="leased_floorplan_4x2" placeholder="# 4x2")
-    
-    div.newDLR-hr
+        div.newDLR-hr
 
-    div.form-group
-      label(for='leased_furnished_count_2x2') 
-      ='Leased Furniture - 2x2 Count   '
-      input(type="number" name="leased_furnished_count_2x2" id="leased_furnished_count_2x2" placeholder="# 2x2 w/ Leased Furnishing")
-    div.form-group
-      label(for='total_furnished_count_2x2') 
-      ='Left to Lease - 2x2 Count  '
-      input(type="number" name="total_furnished_count_2x2" id="total_furnished_count_2x2" placeholder="# 2x2's Left to Lease")
+        div.form-group
+          label(for='leased_floorplan_1x1') 
+          ='Leased - 1x1 Count   '
+          input(type="number" name="leased_floorplan_1x1" id="leased_floorplan_1x1" placeholder="# 1x1")
+        div.form-group
+          label(for='leased_floorplan_2x2a') 
+          ='Leased - 2x2A Count   '
+          input(type="number" name="leased_floorplan_2x2a" id="leased_floorplan_2x2a" placeholder="# 2x2a")
+        div.form-group
+          label(for='leased_floorplan_2x2b') 
+          ='Leased - 2x2B Count   '
+          input(type="number" name="leased_floorplan_2x2b" id="leased_floorplan_2x2b" placeholder="# 2x2b")
+        div.form-group
+          label(for='leased_floorplan_4x2') 
+          ='Leased - 4x2 Count   '
+          input(type="number" name="leased_floorplan_4x2" id="leased_floorplan_4x2" placeholder="# 4x2")
+        
+        div.newDLR-hr
 
-    div.newDLR-hr
+        div.form-group
+          label(for='leased_furnished_count_2x2') 
+          ='Leased Furniture - 2x2 Count   '
+          input(type="number" name="leased_furnished_count_2x2" id="leased_furnished_count_2x2" placeholder="# 2x2 w/ Leased Furnishing")
+        div.form-group
+          label(for='total_furnished_count_2x2') 
+          ='Left to Lease - 2x2 Count  '
+          input(type="number" name="total_furnished_count_2x2" id="total_furnished_count_2x2" placeholder="# 2x2's Left to Lease")
 
-    div.form-group
-      label(for='leased_furnished_count_4x2') 
-      ='Leased Furniture - 4x2 Count   '
-      input(type="number" name="leased_furnished_count_4x2" id="leased_furnished_count_4x2" placeholder="# 4x2 w/ Leased Furnishing")
-    div.form-group
-      label(for='total_furnished_count_4x2') 
-      ='Left to Lease - 4x2 Count  '
-      input(type="number" name="total_furnished_count_4x2" id="total_furnished_count_4x2" placeholder="# 4x2's Left to Lease")
+        div.newDLR-hr
 
-    div.newDLR-hr
-    
-    div.col-centered
-      //- Button trigger modal
-      button.btn.btn-primary.btn-lg(id='confirm_modal' type='button' data-toggle='modal' data-target='#myModal')
-        | Submit
-      //- Modal
-      #myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
-        .modal-dialog(role='document')
-          .modal-content
-            .modal-header
+        div.form-group
+          label(for='leased_furnished_count_4x2') 
+          ='Leased Furniture - 4x2 Count   '
+          input(type="number" name="leased_furnished_count_4x2" id="leased_furnished_count_4x2" placeholder="# 4x2 w/ Leased Furnishing")
+        div.form-group
+          label(for='total_furnished_count_4x2') 
+          ='Left to Lease - 4x2 Count  '
+          input(type="number" name="total_furnished_count_4x2" id="total_furnished_count_4x2" placeholder="# 4x2's Left to Lease")
 
-              button.close(type='button' data-dismiss='modal' aria-label='Close')
-                span(aria-hidden='true') ×
+        div.newDLR-hr
+        
+        div.col-centered
+          //- Button trigger modal
+          button.btn.btn-primary.btn-lg(id='confirm_modal' type='button' data-toggle='modal' data-target='#myModal')
+            | Submit
+          //- Modal
+          #myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
+            .modal-dialog(role='document')
+              .modal-content
+                .modal-header
 
-              h4#myModalLabel.modal-title Review
-            .modal-body
+                  button.close(type='button' data-dismiss='modal' aria-label='Close')
+                    span(aria-hidden='true') ×
 
-              table.table.table-striped.table-bordered.table-hover.table-condensed
+                  h4#myModalLabel.modal-title Review
+                .modal-body
 
-                tr
-                  th Report Date
-                  td.text-center#report_date_show
-                tr
-                  th Prelease Percentage Prv Year
-                  td.text-center#prelease_percentage_prv_year_show
-                tr
-                  th Traffic Today
-                  td.text-center#traffic_today_show
-                tr
-                  th Traffic Week
-                  td.text-center#traffic_week_show
-                tr
-                  th Guarantor Received Count
-                  td.text-center#guarantor_received_count_show
-                tr
-                  th New Lease Count Today
-                  td.text-center#new_lease_count_today_show
-                tr
-                  th New Lease Count Week
-                  td.text-center#new_lease_count_week_show
-                tr
-                  th New Lease Count YTD
-                  td.text-center#new_lease_count_YTD_show
-                tr
-                  th Renewal Count Today
-                  td.text-center#renewal_count_today_show
-                tr
-                  th Renewal Count Week
-                  td.text-center#renewal_count_week_show
-                tr
-                  th Renewal Count YTD
-                  td.text-center#renewal_count_YTD_show
-                tr
-                  th Leased Floorplan 1x1
-                  td.text-center#leased_floorplan_1x1_show
-                tr
-                  th Leased Floorplan 2x2 A
-                  td.text-center#leased_floorplan_2x2a_show
-                tr
-                  th Leased Floorplan 2x2 B
-                  td.text-center#leased_floorplan_2x2b_show
-                tr
-                  th Leased Floorplan 4x2
-                  td.text-center#leased_floorplan_4x2_show
-                tr
-                  th Leased Furnished Count 2x2
-                  td.text-center#leased_furnished_count_2x2_show
-                tr
-                  th Total Furnished Count 2x2
-                  td.text-center#total_furnished_count_2x2_show
-                tr
-                  th Leased Furnished Count 4x2
-                  td.text-center#leased_furnished_count_4x2_show
-                tr
-                  th Total Furnished Count 4x2
-                  td.text-center#total_furnished_count_4x2_show
+                  table.table.table-striped.table-bordered.table-hover.table-condensed
 
-            .modal-footer
-              button.btn.btn-default(type='button' data-dismiss='modal') Wait, lemme change something. . .
-              button.btn.btn-primary(id='form_submit' type='submit') Save
+                    tr
+                      th Report Date
+                      td.text-center#report_date_show
+                    tr
+                      th Prelease Percentage Prv Year
+                      td.text-center#prelease_percentage_prv_year_show
+                    tr
+                      th Traffic Today
+                      td.text-center#traffic_today_show
+                    tr
+                      th Traffic Week
+                      td.text-center#traffic_week_show
+                    tr
+                      th Guarantor Received Count
+                      td.text-center#guarantor_received_count_show
+                    tr
+                      th New Lease Count Today
+                      td.text-center#new_lease_count_today_show
+                    tr
+                      th New Lease Count Week
+                      td.text-center#new_lease_count_week_show
+                    tr
+                      th New Lease Count YTD
+                      td.text-center#new_lease_count_YTD_show
+                    tr
+                      th Renewal Count Today
+                      td.text-center#renewal_count_today_show
+                    tr
+                      th Renewal Count Week
+                      td.text-center#renewal_count_week_show
+                    tr
+                      th Renewal Count YTD
+                      td.text-center#renewal_count_YTD_show
+                    tr
+                      th Leased Floorplan 1x1
+                      td.text-center#leased_floorplan_1x1_show
+                    tr
+                      th Leased Floorplan 2x2 A
+                      td.text-center#leased_floorplan_2x2a_show
+                    tr
+                      th Leased Floorplan 2x2 B
+                      td.text-center#leased_floorplan_2x2b_show
+                    tr
+                      th Leased Floorplan 4x2
+                      td.text-center#leased_floorplan_4x2_show
+                    tr
+                      th Leased Furnished Count 2x2
+                      td.text-center#leased_furnished_count_2x2_show
+                    tr
+                      th Total Furnished Count 2x2
+                      td.text-center#total_furnished_count_2x2_show
+                    tr
+                      th Leased Furnished Count 4x2
+                      td.text-center#leased_furnished_count_4x2_show
+                    tr
+                      th Total Furnished Count 4x2
+                      td.text-center#total_furnished_count_4x2_show
 
-    div.newDLR-bottom-hr
+                .modal-footer
+                  button.btn.btn-default(type='button' data-dismiss='modal') Wait, lemme change something. . .
+                  button.btn.btn-primary(id='form_submit' type='submit') Save
 
-    div.pic-for-leah
-      img(src="/images/sis.jpg")
+        div.newDLR-bottom-hr
+
+    div.quote-for-leah
+      div.panel-heading.text-center
+        strong
+          | Leah
+      div.panel-body.text-center
+        strong
+          | There Is No 
+          | Better Friend 
+          | Than A Sister. 
+          | And There Is 
+          | No Better 
+          | Sister Than 
+          | You.
+
+
+
+
+
+
+
